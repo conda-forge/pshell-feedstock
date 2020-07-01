@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: pshell
@@ -6,33 +6,36 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pshell/pshell-{{ version }}.tar.gz
-  sha256: 01475c6e3220c1d66eabb25a03c315d79281cb410162dfb3e5d225897180f3bf
+  sha256: 9b2db73b32c72ccdb08c33da27d7f121ba88d4ce67c8606ce238923e59b32f8b
 
 build:
-  noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - python >=3.5
+    - python
+    - setuptools
+    - setuptools-scm
     - pip
   run:
-    - python >=3.5
-    - psutil >=3.2
+    - python
+    - setuptools
+    - psutil >=5.3
+    - contextvars >=2.0  # [py36]
 
 test:
   imports:
     - pshell
   requires:
-    - pytest >=3.1
+    - pytest >=4
 
 about:
   home: https://github.com/crusaderky/pshell
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: 'Python API to completely replace bash scripting'
+  summary: Python API to completely replace bash scripting
 
 extra:
   recipe-maintainers:
