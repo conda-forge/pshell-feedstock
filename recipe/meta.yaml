@@ -15,21 +15,24 @@ build:
 
 requirements:
   build:
-    - python >=3.5
+    - python >=3.6
+    - setuptools
     - pip
   run:
-    - python >=3.5
-    - psutil >=3.2
+    - python >=3.6
+    - setuptools
+    - psutil >=5.3
+    - contextvars >=2.0 [py36]
 
 test:
   imports:
     - pshell
   requires:
-    - pytest >=3.1
+    - pytest >=4
 
 about:
   home: https://github.com/crusaderky/pshell
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: Python API to completely replace bash scripting
