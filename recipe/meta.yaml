@@ -14,11 +14,11 @@ build:
 
 requirements:
   build:
-    - python >=3.6
+    - python
     - setuptools
     - pip
   run:
-    - python >=3.6
+    - python
     - setuptools
     - psutil >=5.3
     - contextvars >=2.0  # [py36]
