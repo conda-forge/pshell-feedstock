@@ -9,7 +9,6 @@ source:
   sha256: 9b2db73b32c72ccdb08c33da27d7f121ba88d4ce67c8606ce238923e59b32f8b
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -22,7 +21,7 @@ requirements:
     - python >=3.6
     - setuptools
     - psutil >=5.3
-    - contextvars >=2.0 [py36]
+    - contextvars >=2.0  # [py36]
 
 test:
   imports:
