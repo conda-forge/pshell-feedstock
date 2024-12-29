@@ -5,22 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pshell/pshell-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pshell/pshell-{{ version }}.tar.gz
   sha256: 2965a01f0f056a481b61a684025191b2db06f751caa3517e642151eaf875a413
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools >=66
     - setuptools_scm
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - psutil >=5.6
 
 test:
@@ -28,6 +28,7 @@ test:
     - pshell
   requires:
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/crusaderky/pshell
