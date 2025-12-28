@@ -16,18 +16,18 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools >=66
   run:
-    - python
+    - python >={{ python_min }}
     - psutil >=5.7
 
 test:
   imports:
     - pshell
   requires:
-    - python
+    - python {{ python_min }}
 
 about:
   home: https://github.com/crusaderky/pshell
