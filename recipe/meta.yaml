@@ -21,7 +21,7 @@ requirements:
     - setuptools >=66
   run:
     - python
-    - psutil >=5.6
+    - psutil >=5.7
 
 test:
   imports:
