@@ -1,34 +1,33 @@
-{% set version = "1.4.0" %}
+{% set name = "pshell" %}
+{% set version = "1.5.0" %}
 
 package:
-  name: pshell
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/p/pshell/pshell-{{ version }}.tar.gz
-  sha256: 2965a01f0f056a481b61a684025191b2db06f751caa3517e642151eaf875a413
+  sha256: 06b92b4de1fdb6bee3c2450484fa5ffb10cfc1ab0234837b72115ec76fef9c62
 
 build:
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - setuptools >=66
-    - setuptools_scm
   run:
-    - python >={{ python_min }}
+    - python
     - psutil >=5.6
 
 test:
   imports:
     - pshell
   requires:
-    - pytest
-    - python {{ python_min }}
+    - python
 
 about:
   home: https://github.com/crusaderky/pshell
