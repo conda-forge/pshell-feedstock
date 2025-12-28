@@ -19,7 +19,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=66
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
     - psutil >=5.7
