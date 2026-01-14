@@ -1,5 +1,5 @@
 {% set name = "pshell" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pshell/pshell-{{ version }}.tar.gz
-  sha256: 06b92b4de1fdb6bee3c2450484fa5ffb10cfc1ab0234837b72115ec76fef9c62
+  sha256: 72b23048d013d4b26f5a55e412720189f6e260db9f6abd0f390e2b11a29bf79d
 
 build:
   noarch: python
